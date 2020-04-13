@@ -1,0 +1,11 @@
+# Change "boilerplate_mvc" to relative root folder
+# Learn more about .htaccess: http://www.htaccess-guide.com/
+
+<IfModule mod_rewrite.c>
+  Options -Multiviews
+  RewriteEngine On
+  RewriteBase /boilerplate_mvc/public
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>
